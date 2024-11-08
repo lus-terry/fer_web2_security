@@ -26,7 +26,7 @@ function SensitiveDataExposureExample() {
           <strong>Expiration Date: </strong> 11/11 <br />
         </div>
         <div className="flex gap-1">
-          <strong>Cardholder: </strong> John Doe
+          <strong>CCV: </strong> 111
         </div>
       </div>
       <AddCard />
