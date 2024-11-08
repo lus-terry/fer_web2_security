@@ -6,7 +6,7 @@ function CardInfo() {
 
   const fetchCardData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/get-card");
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/get-card`);
       if (!response.ok) {
         throw new Error("Error fetching card info.");
       }

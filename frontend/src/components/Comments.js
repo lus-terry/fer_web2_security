@@ -11,7 +11,7 @@ function Comments() {
 
   const fetchComments = async () => {
     try {
-      const response = await fetch("http://localhost:5000/comments");
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/comments`);
       console.log("Response from server:", response);
 
       const data = await response.json();
@@ -31,7 +31,7 @@ function Comments() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/comments?xss=${xssEnabled}`,
+        `${process.env.REACT_APP_BACKEND_URL}comments?xss=${xssEnabled}`,
         {
           method: "POST",
           headers: {
