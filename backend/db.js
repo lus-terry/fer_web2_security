@@ -103,7 +103,6 @@ module.exports = {
   getCard,
   addComment,
   getComments,
-  clearComments,
   query,
   pool,
 };
