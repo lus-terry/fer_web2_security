@@ -12,7 +12,7 @@ function AddComment() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/comments?xss=${xssEnabled}`,
+        `${process.env.REACT_APP_BACKEND_URL}/comments?xss=${xssEnabled}`,
         {
           method: "POST",
           headers: {

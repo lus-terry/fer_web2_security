@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 const dotenv = require("dotenv");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 dotenv.config();
 
@@ -103,7 +103,6 @@ module.exports = {
   getCard,
   addComment,
   getComments,
-  clearComments,
   query,
   pool,
 };

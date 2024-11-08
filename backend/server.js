@@ -9,6 +9,9 @@ const {
 const { addComment, getComments } = require("./db");
 
 dotenv.config();
+
+const port = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -76,7 +79,6 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is listening on ${PORT}`);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server is running on port ${port}`);
 });
