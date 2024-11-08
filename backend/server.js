@@ -10,9 +10,7 @@ const { addComment, getComments } = require("./db");
 
 dotenv.config();
 
-const externalUrl = process.env.RENDER_EXTERNAL_URL;
-const port =
-  externalUrl && process.env.PORT ? parseInt(process.env.PORT) : 5000;
+const port = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
@@ -81,14 +79,6 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-
-if (externalUrl) {
-  const hostname = "0.0.0.0";
-  app.listen(port, hostname, () => {
-    console.log(`Server locally running at http://${hostname}:${port}/ and externally on ${externalUrl}`);
-  });
-} else {
-  app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-  });
-}
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server is running on port ${port}`);
+});
