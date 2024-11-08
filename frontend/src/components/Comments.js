@@ -31,7 +31,7 @@ function Comments() {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}comments?xss=${xssEnabled}`,
+        `${process.env.REACT_APP_BACKEND_URL}/comments?xss=${xssEnabled}`,
         {
           method: "POST",
           headers: {
